@@ -1,4 +1,6 @@
 faster-whisper>=1.1
+# faster-whisper 1.2.x calls av.open(metadata_errors=...), which PyAV 19 removed.
+av>=11,<19
 playwright>=1.49
 numpy>=1.26
 pillow>=10
