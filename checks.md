@@ -29,3 +29,5 @@ Format: `- DO / DON'T: the rule (the board that taught it)`
 <!-- Add new rules below this line. Newest at the bottom. -->
 - DO: in app-focus boards, place real UI screenshots at true 16:9 or native aspect ratio inside a crisp 1.5px border card with subtle shadow (ticket 011)
 - DON'T: show dark glow navy backgrounds (#080d1a) or equal card rows for narrative clinical explainers; use Clean minimal paper (#FFFFFF / #F8F9FA) with one clinical accent (ticket 011)
+- DO: use the Broadcast placard theme (C) for all explainer boards: warm charcoal ground (#1F1D1A), card (#262320), warm off-white ink (#F4F1EA), and one accent yellow (#FFB900); no glass, no glowing borders, no cyan/purple gradients (Joey 2026-11-08)
+- DON'T: put the Microsoft logo (.ms-stripe) or a location tag (.location-tag) on a board; keep the camera box empty at x1400 y704 480x336 with hairline border and dark placeholder (Joey 2026-11-08)

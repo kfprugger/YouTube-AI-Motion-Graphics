@@ -1,88 +1,79 @@
 # Tokens: colour, type, shape
 
-The "Clean minimal" starter theme. Change these to make the boards yours: swap the values here and in `assets/brand.css`, then run your checks.
+The "Broadcast placard" (Joey) theme (Direction C). Solid warm charcoal ground, off-white typography, hairline borders, and accent yellow (#FFB900). Zero blur shadows: elevation by surface shift and hairline borders. No glass, glow, or cyan.
 
-## Colour: slate ink, soft grey paper, one blue accent
+## Colour: warm charcoal, off-white ink, accent yellow
 
 ### Ink and paper
-| Token | Hex | Use |
-|---|---|---|
-| Ink | `#1F2937` | all text |
-| Deep ink | `#111827` | code panels, dark chips |
-| Paper | `#FFFFFF` | board ground |
-| Wash | `#F6F7F9` | soft grey panels |
-| Line | `#E5E7EB` | card borders (1.5 px), dividers |
-| Dot | `#E5E7EB` | grid dot on a 40 px tile |
-| Label grey | `#6B7280` | eyebrows, keys |
-| Meta grey | `#9CA3AF` | credit line, meta |
-| Accent | `#2563EB` | the one thing that matters: links, the hero bar, arrows |
-| Accent tint | `#DBEAFE` | title marker, focus rings, highlights |
+| Token | Hex / RGB | Use | Contrast vs Ground |
+|---|---|---|---|
+| Ink | `#F4F1EA` | Headline, primary values, body text | 13.8:1 (AAA) |
+| Secondary ink | `#C9C3B8` | Secondary labels, descriptions | 8.9:1 (AAA) |
+| Muted ink | `#968E82` | Eyebrows, axis ticks, timestamps, credit line | 4.6:1 (AA) |
+| Ground (paper) | `rgb(31 29 26)` (`#1F1D1A`) | Master canvas ground (solid, no dot grid) | 1.0:1 (base) |
+| Card (wash/chrome) | `rgb(38 35 32)` (`#262320`) | Elevated module & container panel | 1.1:1 |
+| Tag pill | `#45403A` | Status pill surface (10px radius) | 1.5:1 |
+| Hairline rule | `rgba(244, 241, 234, 0.16)` | 1px card borders & dividers | 1.3:1 |
+| Subtle rule | `rgba(244, 241, 234, 0.08)` | Subtle grid & background rails | 1.1:1 |
+| Accent yellow | `#FFB900` | The one accent: active state, focal point, links | 9.4:1 (AAA) |
+| Accent tint | `#3A3020` | Dark warm accent panel fill (~15% on charcoal) | - |
 
-The paper never changes colour. One accent per idea.
+The paper ground is solid `#1F1D1A`. One accent per idea.
 
 ### Card tints (fill / text)
-| Card | Fill | Meaning |
-|---|---|---|
-| Plain | `#FFFFFF` | neutral |
-| Blue | `#EFF6FF` | a tool or a model |
-| Green | `#D1FAE5` | good, what we keep |
-| Violet | `#EDE9FE` | identity, what we swap |
-| Rose | `#FFE4E6` | problems, misses |
-| Solid blue | `#2563EB` | the answer, white text |
-| Code | `#111827` | a command or prompt, text `#D1FAE5` |
+| Card | Fill | Text | Meaning |
+|---|---|---|---|
+| Plain | `#262320` | `#F4F1EA` | Neutral module |
+| Blue / Accent | `#3A3020` | `#F4F1EA` | A tool, model, or highlighted item |
+| Green | `#2A3220` | `#F4F1EA` | Good, what we keep |
+| Violet | `#362C22` | `#F4F1EA` | Identity, warm contrast |
+| Rose | `#3A2520` | `#F4F1EA` | Problems, misses |
+| Solid accent | `#FFB900` | `#1F1D1A` | The answer / focal pill (dark text on yellow) |
+| Code | `#262320` | `#7FBA00` | Code / telemetry panel |
 
 ### Signals
-| Signal | Hex |
-|---|---|
-| ✓ works | `#059669` |
-| ~ partial | `#D97706` |
-| ✕ wrong | `#E11D48` |
-| lost / frozen | `#EF4444` |
+| Signal | Hex | Role | Contrast vs Ground |
+|---|---|---|---|
+| Positive / ✓ works | `#7FBA00` | Green micro-indicator | 7.2:1 (AAA) |
+| Negative / ✕ wrong | `#F25022` | Red micro-indicator | 4.8:1 (AA) |
+| Example tag | `#F25022` | Mandatory "EXAMPLE / SYNTHETIC" border | 4.8:1 (AA) |
 
-Never black text on a dark fill. On dark panels use white or the light tints.
+Never dark text on a dark fill. Text sitting on an accent yellow fill `#FFB900` must become dark ink `#1F1D1A`.
 
-## Type: Inter, JetBrains Mono, one serif aside
+## Type: Segoe UI, JetBrains Mono, one serif aside
 
-Load:
-`https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Instrument+Serif:ital@1&display=swap`
+Font stack:
+`'Segoe UI', system-ui, sans-serif` for body, titles, cards.
+`'JetBrains Mono', ui-monospace, monospace` for code, tags, eyebrows.
+`'Instrument Serif', serif` for handwritten aside notes.
 
-- **Inter 700/600**: titles, cards, stickers, captions.
-- **JetBrains Mono 500**: tags, stamps, eyebrows, prompts, tables.
-- **Instrument Serif italic**: one handwritten-style aside per board.
-- Every readable word at 28 px or more. Only the credit line and a full-screen prompt go smaller.
+Every readable word at 28 px or more. Only the credit line and full-screen prompt syntax go smaller.
 
 | Role | Face | Size / line-height | Tracking |
 |---|---|---|---|
-| Title | Inter 700 | 76 / 1.08 | −.035em (68 for long lines) |
-| Card | Inter 700 | 48 / 1.08 | 0 |
-| Sticker | Inter 700 | 54 / 1 | −.02em |
-| Line text | Inter 700 | 34 / 1.2 | 0 |
-| Caption | Inter 700 | 28 | 0 |
-| Aside | Instrument Serif italic | 58 / 1.12 | 0 |
-| Tag | JetBrains Mono 500 | 36 / 1.08 | 0 |
-| Eyebrow | JetBrains Mono 500 | 24 | .07em caps |
-| Prompt | JetBrains Mono 500 | 21 / 1.38 | only inside a full panel |
-| Credit | Inter 700 | 18 / 30 | `#9CA3AF`, bottom-left |
+| Title / Claim | `Segoe UI`, system-ui | 70–76 / 1.08 | −.035em (underline marker with #FFB900) |
+| Card heading | `Segoe UI`, system-ui | 42–48 / 1.08 | 0 |
+| Hero metric number | `Segoe UI`, system-ui | 112 / 1.0 | −.03em tabular |
+| Body / Explanation | `Segoe UI`, system-ui | 30 / 1.35 | 0 |
+| Sticker / Pill | `Segoe UI`, system-ui | 54 / 1 | −.02em (#1F1D1A on #FFB900) |
+| Tag | `JetBrains Mono` | 28–36 / 1.08 | 0 |
+| Eyebrow | `JetBrains Mono` | 24–28 | .08em caps |
+| Prompt | `JetBrains Mono` | 21 / 1.38 | only inside full panel |
+| Credit | `Segoe UI`, system-ui | 18 / 30 | `#968E82`, bottom-left |
 
-Big number 200 px, KPI value 110, chapter number 220 (mono), quote 96, end sign-off 128.
-
-## Shape and elevation: soft shadows, thin borders
+## Shape and elevation: hairline borders, zero blur shadows
 
 | Element | Spec |
 |---|---|
-| Card | border 1.5 px `#E5E7EB` · radius 16–22 · shadow `0 10px 30px rgba(17,24,39,.10)` |
-| Footage tile | radius 12 · same soft shadow · never cropped |
-| Sticker | radius 20 · 5 px white ring + soft shadow |
-| Focus ring | `0 0 0 8px #DBEAFE` |
-| Loss ring | `0 0 0 8px #EF4444` |
-
-One shadow for everything. Elevation comes from scale and the accent, not from harder shadows.
+| Card | border 1px `rgba(244, 241, 234, 0.16)` · radius 6px · shadow none/hairline |
+| Tag pill | border 1px `rgba(244, 241, 234, 0.22)` · radius 10px · background `#45403A` |
+| Footage tile | radius 6px · border 1px `rgba(244, 241, 234, 0.16)` · never cropped |
+| Focus ring | `0 0 0 3px #FFB900` |
+| Elevation | Solid opaque surface shifts (`#262320` over `#1F1D1A`). Zero blur shadows. |
 
 ## Easing
 
 GSAP eases, with CSS equivalents:
-- `power3.out` ≈ `cubic-bezier(.22,1,.36,1)`
-- `back.out(1.5)` ≈ `cubic-bezier(.34,1.56,.64,1)`
-- `power3.inOut` ≈ `cubic-bezier(.65,0,.35,1)`
-
-Durations and moves are in `motion.md`.
+- `power2.out` ≈ broadcast placard reveal
+- `power1.inOut` ≈ data flow pulse
+- `power3.out` ≈ number ticker count-up
